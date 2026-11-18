@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/t8y2/dbx/main/plugins/manifest.schema.json",
   "manifest_version": 1,
-  "id": "io.github.wangyd.data-dictionary",
+  "id": "io.github.yaoduan.data-dictionary",
   "name": "Data Dictionary Export",
   "version": "0.1.0",
-  "publisher": "wangyd",
+  "publisher": "yaoduan",
   "description": "Export a database schema as a data dictionary document (DOCX / Excel).",
   "icon": "assets/plugin.svg",
   "source": "https://github.com/yaoduan/dbx-plugin-data-dictionary",
@@ -27,60 +27,60 @@
   "contributions": [
     {
       "type": "workbench",
-      "id": "io.github.wangyd.data-dictionary.main",
+      "id": "io.github.yaoduan.data-dictionary.main",
       "label": "Data Dictionary",
       "description": "Export tables, columns, indexes and foreign keys as a DOCX or Excel data dictionary.",
       "icon": "assets/plugin.svg"
     },
     {
       "type": "context-menu",
-      "id": "io.github.wangyd.data-dictionary.from-connection",
+      "id": "io.github.yaoduan.data-dictionary.from-connection",
       "label": "Export data dictionary",
       "description": "Open the data dictionary exporter for this connection.",
       "icon": "assets/plugin.svg",
       "menu": "connection",
       "action": {
         "type": "open-workbench",
-        "workbench": "io.github.wangyd.data-dictionary.main"
+        "workbench": "io.github.yaoduan.data-dictionary.main"
       }
     },
     {
       "type": "context-menu",
-      "id": "io.github.wangyd.data-dictionary.from-table",
+      "id": "io.github.yaoduan.data-dictionary.from-table",
       "label": "Export data dictionary",
       "description": "Open the data dictionary exporter for this table's database.",
       "icon": "assets/plugin.svg",
       "menu": "table",
       "action": {
         "type": "open-workbench",
-        "workbench": "io.github.wangyd.data-dictionary.main"
+        "workbench": "io.github.yaoduan.data-dictionary.main"
       }
     },
     {
       "type": "command",
-      "id": "io.github.wangyd.data-dictionary.open",
+      "id": "io.github.yaoduan.data-dictionary.open",
       "label": "Export data dictionary",
       "description": "Open the data dictionary exporter.",
       "icon": "assets/plugin.svg",
       "action": {
         "type": "open-workbench",
-        "workbench": "io.github.wangyd.data-dictionary.main",
+        "workbench": "io.github.yaoduan.data-dictionary.main",
         "presentation": "tab"
       }
     },
     {
       "type": "menus",
-      "id": "io.github.wangyd.data-dictionary.menus",
+      "id": "io.github.yaoduan.data-dictionary.menus",
       "items": [
         {
           "location": "commandPalette",
-          "command": "io.github.wangyd.data-dictionary.open",
+          "command": "io.github.yaoduan.data-dictionary.open",
           "group": "navigation",
           "order": 10
         },
         {
           "location": "appToolbar",
-          "command": "io.github.wangyd.data-dictionary.open",
+          "command": "io.github.yaoduan.data-dictionary.open",
           "group": "navigation",
           "order": 10,
           "default_visible": true
@@ -93,19 +93,19 @@
       "name": "数据字典导出",
       "description": "把数据库结构导出为数据字典文档（DOCX / Excel）。",
       "contributions": {
-        "io.github.wangyd.data-dictionary.main": {
+        "io.github.yaoduan.data-dictionary.main": {
           "label": "数据字典",
           "description": "把表、字段、索引和外键导出为 DOCX 或 Excel 数据字典。"
         },
-        "io.github.wangyd.data-dictionary.from-connection": {
+        "io.github.yaoduan.data-dictionary.from-connection": {
           "label": "导出数据字典",
           "description": "为该连接打开数据字典导出。"
         },
-        "io.github.wangyd.data-dictionary.from-table": {
+        "io.github.yaoduan.data-dictionary.from-table": {
           "label": "导出数据字典",
           "description": "为该表所在数据库打开数据字典导出。"
         },
-        "io.github.wangyd.data-dictionary.open": {
+        "io.github.yaoduan.data-dictionary.open": {
           "label": "导出数据字典",
           "description": "打开数据字典导出。"
         }

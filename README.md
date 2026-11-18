@@ -60,8 +60,8 @@ dbx-plugin package .                  # 生成 dist/<id>-<version>-universal.dbx
 ## 身份与上架
 
 ```
-id:        io.github.wangyd.data-dictionary
-publisher: wangyd
+id:        io.github.yaoduan.data-dictionary
+publisher: yaoduan
 license:   Apache-2.0
 source:    https://github.com/yaoduan/dbx-plugin-data-dictionary
 ```
@@ -71,7 +71,7 @@ source:    https://github.com/yaoduan/dbx-plugin-data-dictionary
 上架流程见[官方文档](https://dbxio.com/cn/docs/plugin-development)和 [`dbx-store/CONTRIBUTING.md`](https://github.com/t8y2/dbx-store/blob/main/CONTRIBUTING.md)：
 
 1. 本仓库推到 GitHub，打版本 Tag 并发 Release——`.github/workflows/plugin-release.yml` 会自动构建未签名候选包，产出 `.dbxp`、`.artifact.json` 和 `release-candidates.json` 并挂到 Release 上。
-2. Fork `t8y2/dbx-store`，向 `main` 提**一个** PR，包含 `publishers/wangyd.json`（仅首次）和 `candidates/io.github.wangyd.data-dictionary.json`。
+2. Fork `t8y2/dbx-store`，向 `main` 提**一个** PR，包含 `publishers/yaoduan.json`（仅首次）和 `candidates/io.github.yaoduan.data-dictionary.json`。
 3. CI 会故意停在红色的 `open candidate(s) awaiting DBX Store signing`，这是设计如此——它阻止未签名内容被合并。维护者审核后运行受保护的签名工作流，把最终目录文件写回同一个 PR，CI 转绿后再合并。
 
 作者只发布未签名候选包，不持有也不填写官方签名密钥（`signingKeyId` 由 DBX Store 的签名流程写入）。已发布版本的字节不可覆盖，任何改动都要递增版本号重新送审。
