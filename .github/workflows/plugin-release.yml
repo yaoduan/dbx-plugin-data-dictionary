@@ -1,0 +1,24 @@
+name: Release DBX plugin
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    # Both the reusable workflow ref and plugin-cli-version are pinned on
+    # purpose: the packager, CLI and SDK ship together, and an unpinned ref
+    # would change the bytes a reviewer already approved.
+    uses: t8y2/dbx/.github/workflows/plugin-release-reusable.yml@plugin-cli-v0.1.10
+    with:
+      release-tag: ${{ github.event.release.tag_name }}
+      package-command: dbx-plugin package .
+      package-path: dist/*.dbxp
+      metadata-path: dist/*.artifact.json
+      plugin-cli-version: 0.1.10
+      # Frontend-only plugin: one cross-platform package instead of the default
+      # five-target native matrix.
+      build-matrix: '{"include":[{"runner":"ubuntu-24.04","target":"universal"}]}'
